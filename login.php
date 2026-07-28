@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>Login - Warung ABC</title>
+</head>
+<body>
+    <h1>Login Aplikasi Warung ABC</h1>
+    <?php
+    session_start();
+    if (isset($_SESSION['pesan error'])) {
+        echo '<p>'. ($_SESSION['pesan_error']);
+    }
+    ?>
+
+    <form action="proses_loogin.php" method="POST">
+        <table>
+            <tr>
+                <td>Username</td>
+                <td>:</td>
+                <td><input type="text" name="username required"></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>:</td>
+                <td><input type="password" name="password" required></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input type="submit" value="login">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
