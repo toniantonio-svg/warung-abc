@@ -6,13 +6,13 @@
         $id_user = $_SESSION['id_user'];
         $waktu = date('Y-m-d H:i:s');
         $log = "INSERT INTO tbl_log (id_user, aktivitas, waktu)";
-        $log .= "VALUES ('id_user', 'logout', '$waktu')";
+        $log = "VALUES ('id_user', 'logout', '$waktu')";
         mysqli_query($koneksi, $log);
     }
 
-    session_start();
+    session_unset();
     session_destroy();
 
-    header('Location: login.php')
+    header('Location: login.php');
     exit;
 ?>

@@ -2,12 +2,12 @@
     session_start();
     include 'config/koneksi.php';
 
-    $username = mysqli_real_escape_string($koneksi, $_POST,['username']);
+    $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $password = $_POST['password'];
 
     $sql = "SELECT * FROM tbl_user WHERE username = '$username'";
     $hasil = mysqli_query($koneksi, $sql);
-
+    
     if (mysqli_num_rows($hasil) == 1) {
         $data = mysqli_fetch_assoc($hasil);
 
@@ -21,7 +21,7 @@
         $waktu = date('Y-m-d H:i:s');
         $log = "INSERT INTO tbl_log (id_user, aktivitas, waktu)";
         $log .= "VALUES ('$id_user', 'login', '$waktu')";
-        mysqli_qurey($koneksi, $log);
+        mysqli_query($koneksi, $log);
 
         header('Location: dashboard.php');
         exit;

@@ -16,7 +16,7 @@
             <tr>
                 <td>Username</td>
                 <td>:</td>
-                <td><input type="text" name="username required"></td>
+                <td><input type="text" name="username" required></td>
             </tr>
             <tr>
                 <td>Password</td>
