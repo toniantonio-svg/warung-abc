@@ -11,7 +11,7 @@
     }
     ?>
 
-    <form action="proses_loogin.php" method="POST">
+    <form action="proses_login.php" method="POST">
         <table>
             <tr>
                 <td>Username</td>
